@@ -3,6 +3,7 @@ document.getElementById("formatBtn").addEventListener("click", () => {
     const inputCode = document.getElementById("inputCode").value;
 
     let formattedCode;
+
     try {
         if (codeType === "html") {
             formattedCode = prettier.format(inputCode, {
@@ -20,6 +21,7 @@ document.getElementById("formatBtn").addEventListener("click", () => {
                 plugins: prettierPlugins,
             });
         }
+
         document.getElementById("outputCode").value = formattedCode;
     } catch (error) {
         document.getElementById("outputCode").value =
